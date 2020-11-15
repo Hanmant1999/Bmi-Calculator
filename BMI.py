@@ -1,0 +1,36 @@
+from tkinter import *
+import tkinter
+root=Tk()
+root.title("BMI Calculator")
+root.geometry("500x500")
+root.configure(bg="#394554")
+har=Label(root,text="Harry's BMI Calculator",fg="#3aa1d8")
+har.place(x=125,y=5)
+mylabel=Label(root,text="Enter Your Weight in Kg:")
+mylabel.place(x=10,y=50)
+e=Entry(root,text="Weight",width=10)
+e.place(x=220,y=50)
+mylabel2=Label(root,text="Enter Your Height in meter:")
+mylabel2.place(x=10,y=100)
+e2=Entry(root,text="Height",width=10)
+e2.place(x=220,y=100)
+mylabel4=Label(root,text="Calculated Your Bmi:")
+mylabel4.place(x=10,y=300)
+e3=Entry(root,width=35)
+e3.place(x=10,y=350)
+def bmi():
+ l=float(e.get())
+ m=float(e2.get())
+ a=l/(m**2)
+ e3.insert(0,a)
+def clear():
+ e.delete(0,END)
+ e2.delete(0,END)
+ e3.delete(0,END)
+
+mybutton3=Button(root,text="Calculate",fg="black",bg="red",padx=5,pady=2,command=bmi)
+mybutton3.place(x=150,y=150)
+mybutton4=Button(root,text="Try another",fg="black",bg="purple",padx=2,pady=1,command=clear)
+mybutton4.place(x=340,y=150)
+
+root.mainloop()
